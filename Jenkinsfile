@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     echo "building the react application"
-                    buildJar()
+                    gv.buildJar()
                 }
             }
         }
