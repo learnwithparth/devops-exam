@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  Spring_Exam-app:
+    image: pm310/spring_exam-app:ra-2.0
+    ports:
+      - 8080:8080
+
