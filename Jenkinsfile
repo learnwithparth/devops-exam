@@ -38,10 +38,9 @@ pipeline {
                 script {
                     echo "deploying the spring application on ec2"
                     //gv.deployApp()
-                    def dockerComposeCmd="docker-compose -f docker-compose.yaml up --detach"
+                    def dockerCreate="docker run -p 8080:8080 --name ec2-spring ${IMAGE_NAME}"
                     sshagent(['ec2-ubuntu-key']) {
-                        sh "scp docker-compose.yaml ec2-user@54.95.222.132:/home/ec2-user"
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerComposeCmd}"
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerCreate}"
 
                     }
                 }
