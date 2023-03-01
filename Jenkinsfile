@@ -15,7 +15,7 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    echo "building the react application"
+                    echo "building the spring application"
                     sh 'mvn package'
                 }
             }
@@ -23,7 +23,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    echo "building the docker image and restart container..."
+                    echo "building the docker image and push than image to docker hub..."
                     //gv.buildImage()
                     withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
                         sh 'docker build -t ${IMAGE_NAME} .'
@@ -36,7 +36,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    echo "deploying the application on ec2"
+                    echo "deploying the spring application on ec2"
                     //gv.deployApp()
                     def dockerComposeCmd="docker-compose -f docker-compose.yaml up --detach"
                     sshagent(['ec2-ubuntu-key']) {
