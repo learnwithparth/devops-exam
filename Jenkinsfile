@@ -39,8 +39,8 @@ pipeline {
                     echo "deploying the spring application on ec2"
                     //gv.deployApp()
                     def dockerCreate="docker run -p 8080:8080 --name ec2-spring ${IMAGE_NAME}"
-                    sshagent(['ec2-ubuntu-key']) {
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerCreate}"
+                    sshagent(['ec2-lakhu-key']) {
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@34.224.156.103 ${dockerCreate}"
 
                     }
                 }
