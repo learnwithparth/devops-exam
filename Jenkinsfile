@@ -40,8 +40,8 @@ pipeline {
                     //gv.deployApp()
                     def dockerComposeCmd="docker-compose -f docker-compose.yaml up --detach"
                     sshagent(['ec2-ubuntu-key']) {
-                        sh "scp docker-compose.yaml ec2-user@54.95.222.132:/home/ec2-user"
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerComposeCmd}"
+                        sh "scp docker-compose.yaml ec2-user@54.145.182.25:/home/ec2-user"
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.145.182.25 ${dockerComposeCmd}"
 
                     }
                 }
