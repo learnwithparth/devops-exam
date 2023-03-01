@@ -9,7 +9,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public @ResponseBody String greeting() {
-        return "Hello, World , My Name is Parth Mangukiya and ID is 20it066";
+        return "<h1>Hello, World , My Name is Lakhu nakamu and ID is 20it062</h1>";
     }
 
 }
