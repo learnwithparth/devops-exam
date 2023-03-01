@@ -15,7 +15,7 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    echo "building the spring application"
+                    echo "building the spring application of hello world"
                     sh 'mvn package'
                 }
             }
