@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        IMAGE_NAME= 'pm310/spring_exam-app:4.2'
+        IMAGE_NAME= 'pm310/spring_exam-app:4.3'
     }
 
     stages {
