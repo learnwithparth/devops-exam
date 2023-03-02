@@ -37,7 +37,7 @@ class DemoApplicationTests {
     @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
-                String.class)).contains("20itxxx");
+                String.class)).contains("20it030");
     }
 
     @Autowired
@@ -46,7 +46,7 @@ class DemoApplicationTests {
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("20itxxx")));
+                .andExpect(content().string(containsString("20it030")));
     }
 
 }
