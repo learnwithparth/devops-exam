@@ -41,10 +41,7 @@ pipeline {
                     def dockerStop="docker stop ec2-spring"
                     def dockerDelete="docker rm ec2-spring"
                     def dockerCreate="docker run -p 8080:8080 --name ec2-spring ${IMAGE_NAME}"
-<<<<<<< HEAD
 
-=======
->>>>>>> 87f0b961d5c94e3e7963f96d90972d4239cb9d53
                     sshagent(['ec2-ubuntu-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerStop}"
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerDelete}"
