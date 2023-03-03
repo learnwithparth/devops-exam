@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        IMAGE_NAME= 'pm310/spring_exam-app:6.0'
+        IMAGE_NAME= 'pm310/spring_exam-app:6.1'
     }
 
     stages {
@@ -40,7 +40,7 @@ pipeline {
                     //gv.deployApp()
                     def dockerStop="docker stop ec2-spring"
                     def dockerDelete="docker rm ec2-spring"
-                    def dockerCreate="docker run -p 8080:8080 --name ec2-spring ${IMAGE_NAME}"
+                    def dockerCreate="docker run -p 443:443 --name ec2-spring ${IMAGE_NAME}"
 
                     sshagent(['ec2-ubuntu-key']) {
                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.95.222.132 ${dockerStop}"
